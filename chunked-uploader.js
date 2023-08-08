@@ -117,15 +117,7 @@ const pauseResumeUpload = async (bundlr, uploader) => {
 };
 
 /*********************************** UPLOAD EVENTS **************************************/
-/**
- * The uploader emits 3 events during each upload.
- * These can be subscribed to for any use case when tracking upload progress is needed.
- * 1. chunkUpload: Emitted whenever a chunk is uploaded.
- * 2. chunkError:  Emitted whenever a chunk upload fails.
- *                 Due to internal retry logic, these errors can most likely be ignored
- *                 as long as the upload doesn't error overall.
- * 3. done:        Emitted when the upload completes.
- */
+
 const registerEventListeners = async (uploader) => {
 	uploader.on("chunkUpload", (chunkInfo) => {
 		console.log(
